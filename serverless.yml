@@ -1,6 +1,6 @@
 
 
-service: dahaeng_scheduler
+service: dahaeng-scheduler
 
 frameworkVersion: '2'
 
