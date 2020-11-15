@@ -20,8 +20,8 @@ package:
     - venv/**
 
 functions:
-  send_reminder_or_happy_words:
-    handler: handler.send_push_notification_reminder_or_happy_words
+  send_for_reminder_or_happy_words:
+    handler: handler.send_push_notification_for_reminder_or_happy_words
     events:
      - schedule:
         name: dahaeng_reminder
