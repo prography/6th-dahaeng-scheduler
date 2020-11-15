@@ -4,7 +4,7 @@ from utils.users_util import get_users_who_set_notification_time_as_now
 from utils.push_notification_util import set_push_notification_infos, send_push_notification
 
 
-def send_push_notification_reminder_or_happy_words(event, context):
+def send_push_notification_for_reminder_or_happy_words(event, context):
     """
     # TODO
     매 분 마다 유저가 지정한 시각에 특정 푸시 알림을 보낸다.
