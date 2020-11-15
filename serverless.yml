@@ -1,0 +1,31 @@
+
+
+service: dahaeng_scheduler
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  region: ap-northeast-2
+  runtime: python3.8
+  memorySize: 1024
+  timeout: 900
+
+package:
+  exclude:
+    - node_modules/**
+    - v_py38/**
+    - .gitignore
+    - __pychche__/**
+    - __test__
+    - run.py
+    - test.*
+
+functions:
+  reminder:
+    handler: handler.push_notification_for_reminder
+    events:
+     - schedule:
+        name: dahaeng_reminder
+        rate: cron(0 0 * * ? *)
+        enabled: true
