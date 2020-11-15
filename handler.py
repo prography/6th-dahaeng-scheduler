@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import List
 
 from utils.users_util import get_users_who_set_notification_time_as_now
 from utils.push_notification_util import set_push_notification_infos, send_push_notification
