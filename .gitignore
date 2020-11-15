@@ -18,3 +18,12 @@ var/
 package-lock.json
 # Serverless directories
 .serverless
+
+# virtual env
+venv/
+
+
+node_module/
+.DS_Store
+.vscode/
+.idea/

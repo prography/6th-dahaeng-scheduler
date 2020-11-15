@@ -19,10 +19,13 @@ package:
     - test.*
 
 functions:
-  reminder:
-    handler: handler.push_notification_for_reminder
+  send_reminder_or_happy_words:
+    handler: handler.send_push_notification_reminder_or_happy_words
     events:
      - schedule:
         name: dahaeng_reminder
-        rate: cron(0 6 * * ? *)
+        rate: cron(* * * * ? *)
         enabled: true
+
+plugins:
+  - serverless-python-requirements
