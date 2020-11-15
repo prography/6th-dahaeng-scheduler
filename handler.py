@@ -1,6 +1,6 @@
 from typing import Dict
 
-from utils.messages_util import set_push_notification_message
+from utils.messages_util import set_push_notification_infos
 from utils.push_notification_util import send_push_notification
 from utils.users_util import get_users_who_set_time_as_now
 
@@ -14,9 +14,9 @@ def send_push_notification_reminder_or_happy_words(event, context):
     작성한 경우 : 행복 문구를 푸시알림으로 보내준다
     작성하지 않은 경우 : 일기 작성을 유도하는 푸시알림으로 보낸다.
     """
-    user_infos = get_users_who_set_time_as_now()
-    message_infos = [
-        set_push_notification_message(user_info) for user_info in user_infos
+    user_infos: List = get_users_who_set_time_as_now()
+    message_infos: List = [
+        set_push_notification_infos(user_info) for user_info in user_infos
     ]
     [
         send_push_notification(

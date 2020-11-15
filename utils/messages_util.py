@@ -1,4 +1,4 @@
-def set_push_notification_message(user_info) -> Dict:
+def set_push_notification_infos(user_info) -> Dict:
     message = None
     if user_info.is_written:
         message = set_happy_words()
@@ -12,9 +12,10 @@ def set_push_notification_message(user_info) -> Dict:
     }
 
 
-def set_happy_words():
+def set_happy_words() -> str:
     pass
 
 
-def set_reminder():
+def set_reminder() -> str:
     pass
+
