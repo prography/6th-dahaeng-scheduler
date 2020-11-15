@@ -17,6 +17,7 @@ package:
     - .gitignore
     - __pychche__/**
     - test.*
+    - venv/**
 
 functions:
   send_reminder_or_happy_words:

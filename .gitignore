@@ -23,7 +23,7 @@ package-lock.json
 venv/
 
 
-node_module/
+node_modules/
 .DS_Store
 .vscode/
 .idea/
