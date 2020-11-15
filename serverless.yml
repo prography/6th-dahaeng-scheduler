@@ -30,4 +30,3 @@ functions:
 
 plugins:
   - serverless-python-requirements
-  - python-requirements-plugin
