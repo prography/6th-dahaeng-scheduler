@@ -1,4 +1,4 @@
-from messages import send_happy_words, send_reminder
+from utils.messages_util import set_happy_words, set_reminder
 
 def set_push_notification_infos(user_info) -> Dict:
     message = None

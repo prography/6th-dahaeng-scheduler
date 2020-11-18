@@ -19,7 +19,7 @@ def send_push_notification_for_reminder_or_happy_words(event, context):
     ]
     [
         send_push_notification(
-            push_notification_info.message, push_notification_info.push_notification_token
+            set_push_notification_infos.message, set_push_notification_infos.push_notification_token
         )
-        for message_info in message_infos
+        for push_notification_info in push_notification_infos
     ]
