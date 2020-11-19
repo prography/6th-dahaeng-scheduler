@@ -11,6 +11,18 @@ provider:
   memorySize: 1024
   timeout: 900
 
+custom:
+  dotenv:
+    path:./.env
+    basePath:./
+    logging: false
+    include:
+      - DB_USER
+      - DB_PASSWORD
+      - DB_HOST
+      - DB_PORT
+      - DB_NAME
+
 package:
   exclude:
     - node_modules/**
@@ -18,6 +30,8 @@ package:
     - __pychche__/**
     - test.*
     - venv/**
+  include:
+    .env
 
 functions:
   send_for_reminder_or_happy_words:
@@ -30,3 +44,4 @@ functions:
 
 plugins:
   - serverless-python-requirements
+  - serverless-dotenv-plugin
