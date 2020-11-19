@@ -1,25 +1,21 @@
 import sqlalchemy
 import json
 import os
+from dotenv import load_dotenv
+from pathlib import Path  # Python 3.6+ only
 
 
 class Database(object):
-    CONFIG_FILE_NAME = ".serverless-secrets.json"
 
     def __init__(self):
-        self.user = self.get_db_config('user')
-        self.password = self.get_db_config('password')
-        self.host = self.get_db_config('host')
-        self.port = self.get_db_config('port')
-        self.db = self.get_db_config('db')
+        env_path = Path('.') / '.env'
+        load_dotenv(dotenv_path=env_path)
 
-    def get_db_config(self, setting):
-        config_path = os.path.join(os.path.dirname(os.getcwd()), self.CONFIG_FILE_NAME)
-        
-        with open(config_path) as config:
-            self.secrets = json.load(config)
-        
-        return self.secrets[setting]
+        self.user = os.getenv("DB_USER")
+        self.password = os.getenv("DB_PASSWORD")
+        self.host = os.getenv("DB_HOST")
+        self.port = os.getenv("DB_PORT")
+        self.db = os.getenv("DB_NAME")
 
     def connect(self):
         '''Returns a connection and a metadata object'''
