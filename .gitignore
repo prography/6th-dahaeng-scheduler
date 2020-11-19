@@ -18,6 +18,7 @@ var/
 package-lock.json
 # Serverless directories
 .serverless
+.serverless-secrets.json
 
 # virtual env
 venv/
