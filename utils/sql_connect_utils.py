@@ -1,7 +1,7 @@
 import sqlalchemy
-import pandas as pd
 import json
 import os
+
 
 class Database(object):
     CONFIG_FILE_NAME = ".serverless-secrets.json"
