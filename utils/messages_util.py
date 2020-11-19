@@ -1,7 +1,3 @@
-def set_happy_words() -> str:
-    pass
-
-
-def set_reminder() -> str:
+def set_push_notification_message(is_written: bool) -> str:
     pass
 
