@@ -7,7 +7,10 @@ def set_happy_words() -> str:
     db = Database().connect()
 
     query = "SELECT HAPPY_CONTENT FROM CORE_HAPPYWORD ORDER BY RANDOM() LIMIT 1"
-    happy_words_message = str(pd.read_sql(query, db)['happy_content'])[0]
+    try:
+        happy_words_message = str(pd.read_sql(query, db)['happy_content'])[0]
+    except IndexError:
+        happy_words_message = "[서버알림] 행복 문구를 등록하세요!" 
     return happy_words_message
 
 
@@ -16,7 +19,10 @@ def set_reminder() -> str:
     db = Database().connect()
 
     query = "SELECT REMINDER_CONTENT FROM CORE_REMINDERWORD ORDER BY RANDOM() LIMIT 1"
-    reminder_message = str(pd.read_sql(query, db)['reminder_content'])[0]
+    try:
+        reminder_message = str(pd.read_sql(query, db)['reminder_content'])[0]
+    except IndexError:
+        reminder_message = "[서버알림] 리마인더 문구를 등록하세요!"
     return reminder_message
 
 
