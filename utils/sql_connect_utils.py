@@ -1,11 +1,9 @@
 import sqlalchemy
-import json
 import os
 from dotenv import load_dotenv
-from pathlib import Path  # Python 3.6+ only
 
 
-ENV_PATH = Path('.') / '.env'
+ENV_PATH = os.path.dirname(os.getcwd()) + "/.env"
 load_dotenv(dotenv_path=ENV_PATH)
 
 USER = os.getenv("DB_USER")
