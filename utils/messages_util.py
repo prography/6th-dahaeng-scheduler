@@ -6,7 +6,8 @@ def set_push_notification_message(is_written: bool) -> str:
     push_message = None
     db = connect()
 
-    if is_written:
+        TYPE = ["r", "h"]
+        query =   f"SELECT CONTENT FROM CORE_PUSHNOTIFICATIONMESSAGE WHERE TYPE = '{TYPE[is_written]}' ORDER BY RANDOM() LIMIT 1"
         query = "SELECT CONTENT FROM CORE_PUSHNOTIFICATIONMESSAGE WHERE TYPE = 'h' ORDER BY RANDOM() LIMIT 1"
     else:
         query = "SELECT CONTENT FROM CORE_PUSHNOTIFICATIONMESSAGE WHERE TYPE = 'r' ORDER BY RANDOM() LIMIT 1"
