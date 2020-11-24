@@ -3,7 +3,7 @@ import pandas as pd
 
 
 def set_push_notification_message(is_written: bool) -> str:
-    push_message = None
+ DEFAULT_MESSAGE  = "[서버알림] 리마인더 문구를 등록하세요!"
     db = connect()
 
         TYPE = ["r", "h"]
