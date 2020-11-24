@@ -11,7 +11,7 @@ def set_push_notification_message(is_written: bool) -> str:
         query = "SELECT CONTENT FROM CORE_PUSHNOTIFICATIONMESSAGE WHERE TYPE = 'h' ORDER BY RANDOM() LIMIT 1"
     else:
         query = "SELECT CONTENT FROM CORE_PUSHNOTIFICATIONMESSAGE WHERE TYPE = 'r' ORDER BY RANDOM() LIMIT 1"
-    try:
+response = pd.read_sql_query(query, db)['content']
         push_message = str(pd.read_sql_query(query, db)['content'][0])
     except IndexError:
         push_message = "[서버알림] 리마인더 문구를 등록하세요!"
